@@ -1,0 +1,22 @@
+{
+  "name": "covid-19-crawl",
+  "version": "1.0.0",
+  "main": "/bin/app.js",
+  "repository": "https://github.com/cokia/covid-19-crawl",
+  "author": "cokia <hwymaster01@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "console-stamp": "^0.2.9",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "request": "^2.88.2",
+    "tsc": "^1.20150623.0",
+    "typescript": "^3.8.2"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.16",
+    "@types/express": "^4.17.2",
+    "@types/request": "^2.48.4"
+  }
+}
