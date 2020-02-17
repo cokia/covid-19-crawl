@@ -41,3 +41,13 @@ request(url, async function(error, response, body){
     let diedata = main(".num”)[2].children[0].data.split(" ")[0]
 }
 }
+
+async function reqcity(city){
+    url = "https://"
+request(url, async function(error, response, body){
+    const main = cheerio.load(body);
+    let alldata = main(".num")[0].children[0].data.split(" ")[0];
+    let cleardata = main(".num”)[1].children[0].data.split(" ")[0]
+    let diedata = main(".num”)[2].children[0].data.split(" ")[0]
+}
+}
