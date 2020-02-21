@@ -33,7 +33,7 @@ app.get('/all', function(req, res) {
     res.status(200).send("covid-19 crawl");
   });
 async function reqall(){
-    url = "https://"
+    url = "http://ncov.mohw.go.kr/index_main.jsp"
 request(url, async function(error, response, body){
     const main = cheerio.load(body);
     let alldata = main(".num")[0].children[0].data.split(" ")[0];
@@ -43,7 +43,7 @@ request(url, async function(error, response, body){
 }
 
 async function reqcity(city){
-    url = "https://"
+    url = "http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=13&ncvContSeq=&contSeq=&board_id=&gubun="
 request(url, async function(error, response, body){
     const main = cheerio.load(body);
     let alldata = main(".num")[0].children[0].data.split(" ")[0];
