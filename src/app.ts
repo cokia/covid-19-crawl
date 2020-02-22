@@ -33,21 +33,19 @@ app.get('/all', function(req, res) {
     res.status(200).send("covid-19 crawl");
   });
 async function reqall(){
-    url = "http://ncov.mohw.go.kr/index_main.jsp"
+   const url = "http://ncov.mohw.go.kr/index_main.jsp"
 request(url, async function(error, response, body){
-    const main = cheerio.load(body);
-    let alldata = main(".num")[0].children[0].data.split(" ")[0];
-    let cleardata = main(".num”)[1].children[0].data.split(" ")[0]
-    let diedata = main(".num”)[2].children[0].data.split(" ")[0]
+    const $ = cheerio.load(body);
+    let alldata = $(".num")[0].children[0].data.split(" ")[0];
+    let cleardata = $(".num”)[1].children[0].data.split(" ")[0];
+    let diedata = $(".num”)[2].children[0].data.split(" ")[0];
 }
 }
 
 async function reqcity(city){
-    url = "http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=13&ncvContSeq=&contSeq=&board_id=&gubun="
+   const url = "http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=13&ncvContSeq=&contSeq=&board_id=&gubun="
 request(url, async function(error, response, body){
-    const main = cheerio.load(body);
-    let alldata = main(".num")[0].children[0].data.split(" ")[0];
-    let cleardata = main(".num”)[1].children[0].data.split(" ")[0]
-    let diedata = main(".num”)[2].children[0].data.split(" ")[0]
+    const $ = cheerio.load(body);
+    let citydata = $(".num")[0].children[0].data.split(" ")[0];
 }
 }
